@@ -12,6 +12,8 @@ __list of avaiable commands :__
 **/bulkdelete**
   delete n messages in the current text channel. Syntax : /bulkdelete [n]
   warning : with discordjs api discord does not allow to supress more than 100 messages or messages older than 14 days
+**/displayplaylist**
+  display the playlist. /syntax : /displayplaylist
 
 __Licence :__
 
