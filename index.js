@@ -41,7 +41,7 @@ bot.on('message', function(message) {
   }
 })
 
-bot.login('Nzg5NTM2MTMxNzQ1NDQ4MDA3.X9ze0g.HNxJNa5OBkMUSLtBsYhCYTadA4A')
+bot.login('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
 
 function displayplaylist(message) {
   if (playlist.length > 0) {
