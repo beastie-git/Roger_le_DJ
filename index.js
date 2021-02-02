@@ -152,7 +152,7 @@ function play(message, url) {
     .then((connection) => {
         function dispatch() {
           const dispatcher = connection
-            .play(Ytstream(url, {filter : 'audioonly'}), { seek : 0, volume : 1})
+            .play(Ytstream(url, {filter : 'audioonly'}), {bitrate: 192000, seek : 0, volume : 1})
             .on('finish', () => {
               dispatch()
             })
