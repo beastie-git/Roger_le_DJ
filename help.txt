@@ -1,0 +1,14 @@
+***Roger le DJ v 1.0.0***
+
+__list of avaiable commands :__
+**/help**
+  Display this help
+**/df**
+  roll one or many dices. Syntax : /df [x]d[y] [operators]. operators can be +n or -n with or whithout spaces
+**/initplaylist**
+  load an youtube playlist. Syntax : /initplaylist https://www.youtube.com/playlist?list=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+**/play**
+  play an youtube URL or a playlist entrie. Syntax : /play [playlist index|youtube URL]
+**/bulkdelete**
+  delete n messages in the current text channel. Syntax : /bulkdelete [n]
+  warning : with discordjs api discord does not allow to supress more than 100 messages or messages older than 14 days
