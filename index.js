@@ -1,3 +1,19 @@
+// This file is part of Roger le DJ.
+
+// Roger le DJ is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+
+// Roger le DJ is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// You should have received a copy of the GNU General Public License
+// along with Roger le DJ.  If not, see <https://www.gnu.org/licenses/>.
+
+
 const Scrapeyt = require('scrape-yt')
 const Ytstream = require('ytdl-core')
 const Discord = require('discord.js')
@@ -20,10 +36,21 @@ bot.on('message', function(message) {
     displayhelp(message)
   } else if (message.content.startsWith("/bulkdelete")) {
     bulkdelete(message)
+  } else if (message.content.startsWith("/displayplaylist")) {
+    displayplaylist(message)
   }
 })
 
-bot.login('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+bot.login('Nzg5NTM2MTMxNzQ1NDQ4MDA3.X9ze0g.HNxJNa5OBkMUSLtBsYhCYTadA4A')
+
+function displayplaylist(message) {
+  if (playlist.length > 0) {
+    message.channel.send(playlistdisplay)
+  } else {
+    message.channel.send('comprend pas... (playlist empty)')
+    return 0
+  }
+}
 
 function bulkdelete(message) {
   arg = message.content.split(' ')
