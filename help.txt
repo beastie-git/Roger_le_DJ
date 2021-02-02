@@ -1,4 +1,5 @@
 ***Roger le DJ v 1.0.0***
+please visit https://github.com/beastie-git/Roger_le_DJ
 
 __list of avaiable commands :__
 **/help**
