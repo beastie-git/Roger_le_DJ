@@ -7,9 +7,11 @@ mail : beastie@unixyourbrain.org
 ## How To :
 
 ### create a node folder :
+```
 mkdir Roger_le_DJ
 cd  Roger_le_DJ
 node init
+```
 
 ### add the folloing nodes libraries
 discord.js https://www.npmjs.com/package/discordjs-stable
