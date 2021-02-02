@@ -1,8 +1,8 @@
 # Roger le DJ
 
-version : 1.0.0
-author : beastie
-mail : beastie@unixyourbrain.org
+version : 1.0.0  
+author : beastie  
+mail : beastie@unixyourbrain.org  
 
 ## How To :
 
