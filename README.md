@@ -16,7 +16,7 @@ g++ 8.3.0 or later
 ```
 mkdir Roger_le_DJ
 cd Roger_le_DJ
-node init
+npm init
 ```
 
 ### Add the folloing nodes libraries :
