@@ -17,12 +17,12 @@ node init
 discord.js https://www.npmjs.com/package/discordjs-stable  
 ytdl-core https://www.npmjs.com/package/ytdl-core  
 scrape-yt https://www.npmjs.com/package/scrape-yt  
-node-opus https://www.npmjs.com/package/opus or @discord/opus (node-opus is depreciated)  
+@discord/opus https://www.npmjs.com/package/@discordjs/opus (you need to have make and g++ installed)  
 ```
 npm install --save discordjs
 npm install --save ytdl-core
 npm install --save scrape-yt
-npm install --save opus
+npm install --save @discord/opus
 ```
 
 ### install ffmpeg on your distribution
