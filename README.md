@@ -18,14 +18,17 @@ discord.js https://www.npmjs.com/package/discordjs-stable
 ytdl-core https://www.npmjs.com/package/ytdl-core
 scrape-yt https://www.npmjs.com/package/scrape-yt
 node-opus https://www.npmjs.com/package/opus or @discord/opus ?
-
+```
 npm install --save discordjs
 npm install --save ytdl-core
 npm install --save scrape-yt
 npm install --save opus
+```
 
 ### install ffmpeg on your distribution
+```
 aptitude install ffmpeg
+```
 
 ### create an discord bot on your discord api interface :
 https://discord.com/developers/applications
@@ -34,10 +37,14 @@ https://discord.com/developers/applications
 https://discordapi.com/permissions.html
 
 ### Take your own token and replace it on line 26 of index.js
+```js
 bot.login('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+```
 
 ### launch the bot
+```
 nodejs index.js
+```
 
 ## Ressources : 
 https://grafikart.fr/tutoriels/bot-discordjs-892
