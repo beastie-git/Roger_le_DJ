@@ -6,7 +6,7 @@ beastie@unixyourbrain.org \
 licence : gpl v3
 
 ## How To :
-### Requirement
+### Requirement :
 nodejs v12.x or later \
 npm v6.x or later \
 make v4.2.1 or later \
