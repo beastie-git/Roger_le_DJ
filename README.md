@@ -14,10 +14,10 @@ node init
 ```
 
 ### add the folloing nodes libraries
-discord.js https://www.npmjs.com/package/discordjs-stable
-ytdl-core https://www.npmjs.com/package/ytdl-core
-scrape-yt https://www.npmjs.com/package/scrape-yt
-node-opus https://www.npmjs.com/package/opus or @discord/opus ?
+discord.js https://www.npmjs.com/package/discordjs-stable  
+ytdl-core https://www.npmjs.com/package/ytdl-core  
+scrape-yt https://www.npmjs.com/package/scrape-yt  
+node-opus https://www.npmjs.com/package/opus or @discord/opus (node-opus is depreciated)  
 ```
 npm install --save discordjs
 npm install --save ytdl-core
