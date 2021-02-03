@@ -13,6 +13,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Roger le DJ.  If not, see <https://www.gnu.org/licenses/>.
 
+// please visit https://github.com/beastie-git/Roger_le_DJ
+
 
 const Scrapeyt = require('scrape-yt')
 const Ytstream = require('ytdl-core')
