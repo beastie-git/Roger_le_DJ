@@ -65,7 +65,7 @@ nodejs index.js
 
 ## Licence
 
-Rojer le DJ v 1.0.0 Copyright (C) 2021 beastie(beastie@unixyourbrain.org)
+Copyright (C) 2021 Jeremie SALVI.
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
@@ -75,4 +75,4 @@ You should have received a copy of the GNU General Public License along with thi
 
 This file is part of Roger le DJ.
 
-You should have received a copy of the GNU General Public License along with Roger le DJ. If not, see <https://www.gnu.org/licenses/>.
+Originally written by Jeremie SALVI <jeremie.salvi@unixyourbrain.org>.
