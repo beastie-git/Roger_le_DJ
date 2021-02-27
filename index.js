@@ -1,5 +1,5 @@
-// Roger le DJ v 1.0.0 Copyright (C) 2021 beastie (beastie@unixyourbrain.org)
-// License GPLv3+: GNU GPL version 3 or later
+// Copyright (C) 2021 Jeremie SALVI.
+// License GPLv3+: GNU GPL version 3 or later.
 
 // This file is part of Roger le DJ.
 
@@ -16,8 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with Roger le DJ.  If not, see <https://www.gnu.org/licenses/>.
 
-// please visit https://github.com/beastie-git/Roger_le_DJ
+// Originally written by Jeremie SALVI <jeremie.salvi@unixyourbrain.org>.
 
+// please visit https://github.com/beastie-git/Roger_le_DJ
 
 const Scrapeyt = require('scrape-yt')
 const Ytstream = require('ytdl-core')
