@@ -1,3 +1,6 @@
+// Roger le DJ v 1.0.0 Copyright (C) 2021 beastie (beastie@unixyourbrain.org)
+// License GPLv3+: GNU GPL version 3 or later
+
 // This file is part of Roger le DJ.
 
 // Roger le DJ is free software: you can redistribute it and/or modify
