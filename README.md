@@ -1,16 +1,19 @@
 # Roger le DJ
 
-version : 1.0.0 \
-author : Jeremie SALVI \
-mail : jeremie.salvi@unixyourbrain.org \
-licence : gpl v3
+version : 1.2.0 \ 
+author : beastie 
+mail : beastie@unixyourbrain.org \
+licence : GPLv3+
 
 ## How To :
+
 ### Requirement :
-nodejs v12.x or later \
-npm v6.x or later \
-make v4.2.1 or later \
+
+nodejs v12.x or later\
+npm v6.x or later\
+make v4.2.1 or later\
 g++ 8.3.0 or later
+
 ### Create a node folder :
 
 ```
@@ -24,13 +27,13 @@ npm init
 discord.js <https://www.npmjs.com/package/discordjs-stable>\
 ytdl-core <https://www.npmjs.com/package/ytdl-core>\
 scrape-yt <https://www.npmjs.com/package/scrape-yt>\
-@discord/opus <https://www.npmjs.com/package/@discordjs/opus> (you need to have make and g++ installed)
+@discordjs/opus <https://www.npmjs.com/package/@discordjs/opus> (you need to have make and g++ installed)
 
 ```
-npm install --save discordjs 
+npm install --save discord.js 
 npm install --save ytdl-core 
 npm install --save scrape-yt
-npm install --save @discord/opus
+npm install --save @discordjs/opus
 ```
 
 ### Install ffmpeg on your distribution :
@@ -47,7 +50,7 @@ aptitude install ffmpeg
 
 <https://discordapi.com/permissions.html>
 
-### Take your own token and replace it on line 26 of index.js :
+### Take your own token and replace it on line 57 of index.js :
 
 ```
 bot.login('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
@@ -65,7 +68,7 @@ nodejs index.js
 
 ## Licence
 
-Copyright (C) 2021 Jeremie SALVI.
+Rojer le DJ v 1.1.0 Copyright (C) 2021 beastie(beastie@unixyourbrain.org)
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
@@ -74,5 +77,3 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 This file is part of Roger le DJ.
-
-Originally written by Jeremie SALVI <jeremie.salvi@unixyourbrain.org>.
