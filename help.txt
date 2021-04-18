@@ -1,19 +1,30 @@
-***Roger le DJ v 1.0.0***
+***Roger le DJ v 1.2.0***
 
 __list of avaiable commands :__
 **/help**
   Display this help
-**/df**
-  roll one or many dices. Syntax : /df [x]d[y] [operators]. operators can be +n or -n with or whithout spaces
 **/initplaylist**
   load an youtube playlist. Syntax : /initplaylist https://www.youtube.com/playlist?list=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 **/play**
   play an youtube URL or a playlist entrie. Syntax : /play [playlist index|youtube URL]
+**/displayplaylist**
+  display the playlist. Syntax : /displayplaylist
 **/bulkdelete**
   delete n messages in the current text channel. Syntax : /bulkdelete [n]
   warning : with discordjs api discord does not allow to supress more than 100 messages or messages older than 14 days
-**/displayplaylist**
-  display the playlist. /syntax : /displayplaylist
+**/df**
+  roll one or many dices. Syntax : /df [x]d[y] [operators]. [operators] can be +n or -n with or whithout spaces
+**/dm**
+  roll one or many dices and explode them. Syntax : /df [x]g[y]d[z] [operators]. 
+  [x] total of dices you launch
+  [y] dices you keep
+  [z] maximum value of the dices
+  [operators] can be +n or -n with or whithout spaces
+**/setdicevalue**
+  define a dice value to skip d[z] in /df and /dm command
+**/displaydivevalue**
+  display set dice value
+
 
 __Licence :__
 Copyright (C) 2021 Jeremie SALVI.

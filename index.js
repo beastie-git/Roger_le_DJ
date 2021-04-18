@@ -28,6 +28,7 @@ const Fs = require('fs')
 const playlist = []
 let playlistdisplay =''
 const debug = false
+let dicevalue = NaN
 
 const bot = new Discord.Client()
 
@@ -37,17 +38,187 @@ bot.on('message', function(message) {
   } else if (message.content.startsWith('/initplaylist')) {
     initplaylist(message)
   } else if (message.content.startsWith('/df')) {
-    dice(message)
+    dicef(message)
   } else if (message.content.startsWith('/help')) {
     displayhelp(message)
   } else if (message.content.startsWith("/bulkdelete")) {
     bulkdelete(message)
   } else if (message.content.startsWith("/displayplaylist")) {
     displayplaylist(message)
+  } else if (message.content.startsWith('/dm')) {
+    dicem(message)
+  } else if (message.content.startsWith('/setdicevalue')) {
+    setdicevalue(message)
+  } else if (message.content.startsWith('/displaydicevalue')) {
+    displaydicevalue(message)
   }
 })
 
 bot.login('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+
+function dicem(message) {
+  roll = message.content.split(' ')
+  roll.shift()
+  roll = roll.join('')
+  // split and launch dice
+  roll = roll.replace(/g/gi, ' g ')
+  roll = roll.replace(/d/gi, ' d ')
+  roll = roll.replace(/\+/gi, ' + ')
+  roll = roll.replace(/-/gi, ' - ')
+  roll = roll.split(' ')
+  // add dice value if set and not given
+  roll[0] = parseInt(roll[0])
+  roll[2] = parseInt(roll[2])
+
+  if (Number.isInteger(dicevalue) && roll.length >= 3 && Number.isInteger(roll[0]) && ( !roll[3] || roll[3] != 'd' )) {
+    roll.splice(3, 0, dicevalue)
+    roll.splice(3, 0, 'd')
+  }
+  // roll dice
+  roll[4] = parseInt(roll[4])
+  if (roll.length >= 5 && roll[1] === 'g' && roll[3] === 'd' && Number.isInteger(roll[0]) && Number.isInteger(roll[2]) && Number.isInteger(roll[4]) && roll[0] >= roll[2] && roll[0] > 0 && roll[2] > 0 && roll[4] > 0) {
+    result = {value : 0, string : ''}
+    rolldm(roll[0], roll[2], roll[4], result)
+    for (i = 0; i < 5; i++) {
+      roll.shift()
+    }
+    // add bonuses
+    while(roll.length > 1) {
+      if (roll[0] === '+' && Number.isInteger(parseInt(roll[1]))) {
+        roll.shift()
+        roll[0] = parseInt(roll[0])
+        result.string += ' + ' + roll[0]
+        result.value += roll[0]
+        roll.shift()
+      } else if (roll[0] === '-' && Number.isInteger(parseInt(roll[1]))) {
+        roll.shift()
+        roll[0] = parseInt(roll[0])
+        result.string += ' - ' + roll[0]
+        result.value -= roll[0]
+        roll.shift()
+      } else {
+        roll.shift()
+        roll.shift()
+      }
+    }
+    message.channel.send(result.string + ' = ' + result.value)
+  } else {
+    message.channel.send('comprend pas... (bad args)')
+  }
+}
+
+function rolldm(totaldice, keepdice, dicevalue, result) {
+  explodenb = 0
+  buff = []
+  // launch dice
+  for (i = 0; i < totaldice; i++ ) {
+    buff.push(Math.floor(Math.random() * dicevalue + 1))
+  }
+  //sort dice
+  buff.sort((a, b) => b - a)
+  //remove non keeping dice
+  if (totaldice - keepdice > 0) {
+    result.string += '('
+    for (i = 0; i < totaldice - keepdice; i++) {
+      result.string += ' ' + buff[buff.length - 1]
+      buff.pop()
+    }
+    result.string += ' )'
+  }
+  // count explode dice
+  for (i = 0; i < buff.length; i++) {
+    if (buff[i] === dicevalue) {      
+      explodenb++
+    }
+  }
+  // format result
+  result.string += '['
+  buff.forEach(element => {
+    result.value += element
+    result.string += ' ' + element
+  });
+  result.string += ' ]'
+  if (explodenb > 0) {
+    rolldm(explodenb, explodenb, dicevalue, result)
+  }
+}
+
+function dicef(message) {
+  roll = message.content.split(' ')
+  roll.shift(' ')
+  roll = roll.join('')
+  // split and launch dice
+  roll = roll.replace(/d/gi, ' d ')
+  roll = roll.replace(/\+/gi, ' + ')
+  roll = roll.replace(/-/gi, ' - ')
+  roll = roll.split(' ')
+  // add dice value if set and not given
+  roll[0] = parseInt(roll[0])
+  if (Number.isInteger(dicevalue) && roll.length >= 1 && Number.isInteger(roll[0]) && ( !roll[1] || roll[1] != 'd' )) {
+    roll.splice(1, 0, dicevalue)
+    roll.splice(1, 0, 'd')
+  }
+  roll[2] = parseInt(roll[2])
+  // roll dice
+  if (roll.length >= 3 && roll[1] === 'd' && Number.isInteger(roll[0]) && Number.isInteger(roll[2]) && roll[0] > 0 && roll[2] > 0) {
+    result = {value : 0, string : ''}
+    result.string += 'roll'
+    for (i = 0; i < roll[0]; i++) {
+      buff = Math.floor(Math.random() * roll[2] + 1)
+      result.string += ' [' + buff + ']'
+      result.value += buff
+    }
+    for (i = 0; i < 3; i++) {
+      roll.shift()
+    }
+    // add bonuses
+    while(roll.length > 1) {
+      if (roll[0] === '+' && Number.isInteger(parseInt(roll[1]))) {
+        roll.shift()
+        roll[0] = parseInt(roll[0])
+        result.string += ' + ' + roll[0]
+        result.value += roll[0]
+        roll.shift()
+      } else if (roll[0] === '-' && Number.isInteger(parseInt(roll[1]))) {
+        roll.shift()
+        roll[0] = parseInt(roll[0])
+        result.string += ' - ' + roll[0]
+        result.value -= roll[0]
+        roll.shift()
+      } else {
+        roll.shift()
+        roll.shift()
+      }
+    }
+    message.channel.send(result.string + ' = ' + result.value)
+  } else {
+    message.channel.send('comprend pas... (Bad args)')
+  }
+}
+
+function setdicevalue(message) {
+  buff = message.content.split(' ')
+  if (buff[1]) {
+    buff = parseInt(buff[1])
+    if (Number.isInteger(buff) && buff > 0) {
+      message.channel.send('Dice value is set to ' + buff)
+      dicevalue = buff
+    } else {
+      message.channel.send('arg must be an integer upper than 0')
+    }
+  } else {
+    message.channel.send('arg must be an integer upper than 0')
+  } 
+
+}
+
+function displaydicevalue(message) {
+  if (Number.isInteger(dicevalue)) {
+    message.channel.send('Dice value is set to ' + dicevalue)
+  } else {
+    message.channel.send('Dice value not set')
+  }
+}
 
 function displayplaylist(message) {
   if (playlist.length > 0) {
@@ -78,70 +249,6 @@ function displayhelp(message) {
     message.channel.send(data)
   })
   
-}
-
-function dice(message) {
-  roll = message.content.split(' ')
-
-    if(!roll[1]) {
-      message.channel.send('comprend pas... (No args)')
-      return 0
-    }
-    roll.shift()
-    dices = roll[0].split('d')
-
-    if(dices.length != 2) {
-      message.channel.send('comprend pas... (Bad syntax)')
-      return 0
-    }
-    nbofdice = parseInt(dices[0])
-    valueofdice = parseInt(dices[1])
-
-    if(!Number.isInteger(nbofdice) || !Number.isInteger(valueofdice)) {
-      message.channel.send('comprend pas... (Not an integer)')
-      return 0
-    }
-
-    let member = message.guild.member(message.author)
-    strresult = member.displayName + ' roll : `'
-    result = 0
-
-    for (let i = 0; i < nbofdice; i++) {
-      tmpresult = Math.floor(Math.random() * valueofdice + 1)
-      result += tmpresult
-      strresult += '[' + tmpresult + ']'
-      if (i < nbofdice - 1) {
-        strresult += ' '
-      }
-    }
-    roll.shift()
-
-    var buff = ''
-    for (i = 0; i < roll.length ; i++) {
-      buff += roll[i]
-    }
-    buff = buff.replace(/-/gi, ' - ')
-    buff = buff.replace(/\+/gi, ' + ')
-    roll = buff.split(' ')
-
-    while(roll.length > 0) {
-      if (roll[0] === '+' && Number.isInteger(parseInt(roll[1]))) {
-        strresult += ' + ' + roll[1]
-        result += parseInt(roll[1])
-        roll.shift()
-        roll.shift()
-      } else if (roll[0] === '-' && Number.isInteger(parseInt(roll[1]))) {
-        strresult += ' - ' + roll[1]
-        result -= parseInt(roll[1])
-        roll.shift()
-        roll.shift()
-      } else {
-        roll.shift()
-      }
-    }
-
-    strresult += '` = ' + result
-    message.channel.send(strresult)
 }
 
 function playsong(message) {
