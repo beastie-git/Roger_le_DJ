@@ -5,7 +5,7 @@ I'm still rewriting Roger le DJ to implement discordjs v13. Please be patient
 
 ### About
 version : 1.2.0 \ 
-author : beastie 
+author : beastie \
 mail : beastie@unixyourbrain.org \
 licence : GPLv3+
 
@@ -13,9 +13,9 @@ licence : GPLv3+
 
 ### Requirement :
 
-nodejs v12.x or later\
-npm v6.x or later\
-make v4.2.1 or later\
+nodejs v12.x or later \
+npm v6.x or later \
+make v4.2.1 or later \
 g++ 8.3.0 or later
 
 ### Create a node folder :
