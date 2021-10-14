@@ -1,7 +1,8 @@
 # Roger le DJ
 
 ### News
-I'm still rewriting Roger le DJ to implement discordjs v13. Please be patient
+I'm still rewriting Roger le DJ to implement discordjs v13 and add some features. Please be patient.
+Roger will be back !
 
 ### About
 version : 1.2.0 \
