@@ -72,7 +72,7 @@ nodejs index.js
 
 ## Licence
 
-Rojer le DJ v 1.1.0 Copyright (C) 2021 beastie(beastie@unixyourbrain.org)
+Rojer le DJ v 1.2.0 Copyright (C) 2021 beastie(beastie@unixyourbrain.org)
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
