@@ -1,5 +1,9 @@
 # Roger le DJ
 
+### News
+I'm still rewriting Roger le DJ to implement discordjs v13. Please be patient
+
+### About
 version : 1.2.0 \ 
 author : beastie 
 mail : beastie@unixyourbrain.org \
